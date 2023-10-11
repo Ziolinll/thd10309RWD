@@ -1,0 +1,740 @@
+* {
+    box-sizing: border-box;
+}
+
+/*body左右線======================================================================================**/
+body {
+    position: relative;
+}
+
+div.body_reigt_line {
+    display: block;
+    width: 1.5px;
+    height: 100%;
+    background-color: #e9c27f;
+    position: absolute;
+    right: 100px;
+    z-index: 3;
+}
+
+div.body_left_line {
+    display: block;
+    width: 1.5px;
+    height: 100%;
+    background-color: #e9c27f;
+    position: absolute;
+    left: 100px;
+    z-index: 3;
+}
+
+/* body左右線--rwd設定------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1400px) {
+
+    div.body_reigt_line,
+    div.body_left_line {
+        display: none;
+    }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
+/*================================================================================================================**/
+
+
+
+/*標題======================================================================================================**/
+div.team_items {
+    border: 1px solid red;
+    text-align: center;
+}
+
+div.team_items h1 {
+    font-size: 44px;
+    font-family: "Cormorant Garamond", serif;
+    color: #e9c27f;
+    padding: 80px 0 12px 0;
+    letter-spacing: .8rem;
+}
+
+div.team_items p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    padding: 0px 0 44px 0;
+    letter-spacing: .4rem;
+    text-transform: uppercase;
+    color: rgb(72, 72, 72);
+    font-weight: 500;
+}
+
+div.team_items.two p {
+    padding: 0px 0 20px 0;
+}
+
+/*標題  RWD----------------------------------------------------------------------------------------------**/
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+
+    div.team_items h1 {
+        font-size: 35px;
+        padding: 30px 0 12px 0;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+
+    div.team_items h1 {
+        font-size: 35px;
+        padding: 30px 0 12px 0;
+    }
+
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+    div.team_items h1 {
+        font-size: 35px;
+        padding: 30px 0 12px 0;
+    }
+
+}
+
+@media screen and (max-width: 575.98px) {
+
+    div.team_items h1 {
+        font-size: 35px;
+        padding: 30px 0 12px 0;
+    }
+
+}
+
+/*---------------------------------------------------------------------------------------------------**/
+/*=========================================================================================================**/
+
+
+
+/*分類標籤=================================================================================================**/
+
+div.fore_label {
+    border: 1px solid rgb(39, 18, 225);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.fore_label a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 3px rgb(62, 46, 46);
+
+}
+
+div.fore_label p {
+    /* border: 1px solid rgb(8, 103, 76); */
+    padding: 10px 20px;
+    margin: 10px 20px;
+    margin-bottom: 30px;
+    background-color: #8A6969;
+    font-size: 16px;
+}
+
+div.fore_label p:hover {
+    /* border: 1px solid rgb(8, 103, 76); */
+    background-color: #ac8383;
+}
+
+div.fore_label_img {
+    /* border: 1px solid rgb(25, 9, 104); */
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    margin-bottom: 25px;
+}
+
+/*分類標籤RWD ok---------------------------------------------------------------------------------------------**/
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.fore_label {
+        /* border: 1px solid rgb(39, 18, 225); */
+        min-width: 100%;
+    }
+
+    div.fore_label p {
+        /* border: 1px solid rgb(8, 103, 76); */
+        padding: 10px 10px;
+        margin: 10px 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 5px;
+        border: 3px solid #e9c27f;
+    }
+
+    div.fore_label_img {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    div.fore_label {
+        /* border: 1px solid rgb(39, 18, 225); */
+        min-width: 100%;
+    }
+
+    div.fore_label p {
+        /* border: 1px solid rgb(8, 103, 76); */
+        padding: 10px 10px;
+        margin: 10px 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 5px;
+        border: 3px solid #e9c27f;
+    }
+
+    div.fore_label_img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    div.fore_label {
+        /* border: 1px solid rgb(39, 18, 225); */
+        min-width: 100%;
+    }
+
+    div.fore_label p {
+        /* border: 1px solid rgb(8, 103, 76); */
+        padding: 10px 10px;
+        margin: 10px 10px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 5px;
+        border: 3px solid #e9c27f;
+    }
+
+    div.fore_label_img {
+        display: none;
+    }
+
+}
+
+/*------------------------------------------------------------------------------------------------**/
+
+/*==================================================================================================================**/
+
+
+/**分類標籤 -下方icon===================================================================================**/
+
+div.service_lead {
+    /* border: 1px solid red;  */
+    display: flex;
+    justify-content: center;
+}
+
+div.service_lead img {
+    max-width: 40px;
+    padding: 36px 0;
+}
+
+/**======================================================================================================================**/
+
+
+/**banner區塊-========================================================================================**/
+
+div.BN_Column {
+    /* border: 1px solid rgb(219, 17, 10); */
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+div.BN_Column_black {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.4;
+    z-index: 1;
+}
+
+img.BN_Column_img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+}
+
+div.BN_Column_font p {
+    /* border: 1px solid rgb(219, 17, 10); */
+    white-space: nowrap;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+    line-height: 1.5;
+    font-size: 32px;
+    align-self: center;
+    color: white;
+    left: 15%;
+    top: 35%;
+    letter-spacing: .5rem;
+}
+
+div.BN_Column_font p {
+    animation: animated-text 2s steps(30, end) 1s 1 normal both;
+}
+
+@keyframes animated-text {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 472px;
+    }
+}
+
+/**banner區塊 RWD  ok----------------------------------------------------------------------------------------------**/
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    div.BN_Column {
+        border: 1px solid rgb(219, 17, 10);
+        height: 300px;
+    }
+
+    div.BN_Column_black {
+        border: 1px solid rgb(59, 84, 5);
+        width: 100%;
+        height: 500px;
+    }
+
+    div.BN_Column_font p {
+        border: 1px solid rgb(5, 95, 128);
+        line-height: 1.5;
+        font-size: 25px;
+        left: 12%;
+        top: 35%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.BN_Column {
+        border: 1px solid rgb(219, 17, 10);
+        height: 300px;
+    }
+
+    div.BN_Column_black {
+        border: 1px solid rgb(59, 84, 5);
+        width: 100%;
+        height: 500px;
+    }
+
+    div.BN_Column_font p {
+        border: 1px solid rgb(5, 95, 128);
+        line-height: 1.5;
+        font-size: 25px;
+        left: 12%;
+        top: 35%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    div.BN_Column {
+        border: 1px solid rgb(219, 17, 10);
+        height: 300px;
+    }
+
+    div.BN_Column_black {
+        border: 1px solid rgb(59, 84, 5);
+        width: 100%;
+        height: 500px;
+    }
+
+    div.BN_Column_font p {
+        border: 1px solid rgb(5, 95, 128);
+        line-height: 1.5;
+        font-size: 25px;
+        left: 12%;
+        top: 35%;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    div.BN_Column {
+        border: 1px solid rgb(219, 17, 10);
+        height: 200px;
+    }
+
+    div.BN_Column_black {
+        border: 1px solid rgb(59, 84, 5);
+        width: 100%;
+        height: 500px;
+    }
+
+    div.BN_Column_font p {
+        border: 1px solid rgb(5, 95, 128);
+        line-height: 1.5;
+        font-size: 16px;
+        left: 5%;
+        top: 35%;
+    }
+}
+
+/**--------------------------------------------------------------------------------------------------------------**/
+
+/*===============================================================================================================================**/
+
+
+
+
+
+
+
+/**卡片區塊===================================================================================================================**/
+
+/**卡片區塊 上方=============================================================================================**/
+
+
+div.card {
+    margin: auto;
+    /* border: 1px solid #f10808; */
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 180px;
+    margin-top: 30px;
+
+}
+
+div.card-wrap {
+    border: 4px solid rgb(134, 88, 67);
+    width: calc((1200px - 80px) /2);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+div.card_top {
+    /* border: 1px solid rgb(65, 12, 4); */
+    display: flex;
+}
+
+div.card_top_img {
+    /* border: 1px solid rgb(59, 92, 9); */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/*01張*/
+img.top_img_01 {
+    width: 200%;
+    position: absolute;
+    left: -90%;
+}
+
+/*02張*/
+img.top_img_02 {
+    width: 300%;
+    position: absolute;
+    left: -45%;
+    top: -20%;
+}
+
+/*03張*/
+img.top_img_03 {
+    width: 300%;
+    position: absolute;
+    left: -125%;
+    bottom: -60%;
+}
+
+/*04張*/
+img.top_img_04 {
+    width: 360%;
+    position: absolute;
+    left: -100%;
+    bottom: -80%;
+}
+
+/*05張*/
+img.top_img_05 {
+    width: 400%;
+    position: absolute;
+    left: -120%;
+    bottom: -160%;
+}
+
+/*06張*/
+img.top_img_06 {
+    width: 420%;
+    position: absolute;
+    right: -120%;
+    bottom: -120%;
+}
+
+
+div .card-wrap span::after {
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #8A6969;
+    height: 3px;
+    margin: 20px auto;
+}
+
+div.card_top_font {
+    display: inline-block;
+    /* border: 1px solid rgb(198, 38, 13); */
+    align-self: center;
+    line-height: 2;
+    font-size: 16px;
+}
+
+/**卡片區塊 評價===============================================================================================**/
+div.card_star {
+    margin-bottom: 20px;
+    /* border: 1px solid rgb(19, 3, 75); */
+    display: flex;
+    align-items: end;
+}
+
+div.card_star p {
+    display: flex;
+    letter-spacing: .5rem;
+    font-size: 18px;
+}
+
+
+/*卡片星星區塊=======================================================================================================*/
+
+.star {
+    margin-left: 16px;
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+}
+
+.star-item {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: url('../img/star.png') center top no-repeat;
+}
+
+input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0)
+}
+
+input[type="radio"]:checked+.star-item~.star-item {
+    background-position: center bottom;
+}
+
+.star:hover label.star-item {
+    background-position: center top !important;
+}
+
+label.star-item:hover~.star-item {
+    background-position: center bottom !important;
+}
+
+.star-item:after {
+    position: absolute;
+    width: 100px;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    right: 0;
+    margin-right: -105px;
+    color: #666
+}
+
+.star:hover .star-item:after {
+    content: '' !important
+}
+
+
+input[type="radio"]:checked+.star-item:after {
+    content: attr(title)
+}
+
+.star:hover .star-item:hover:after {
+    content: attr(title) !important
+}
+
+/*卡片文字區塊=================================================================================================*/
+div.card_font {
+    /* border: 1px solid rgb(8, 7, 99); */
+    margin: 22px 0;
+
+}
+
+div.card_font p:first-child {
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+div.card_font P:last-child {
+    line-height: 2;
+    letter-spacing: 2px;
+}
+
+
+/*卡片圖片區塊===========================================================================================*/
+
+div.card_img {
+    /* border: 1px solid rgb(19, 3, 75); */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.card_bottom_img {
+    /* border: 1px solid rgb(59, 92, 9); */
+    width: 146px;
+    height: 146px;
+    overflow: hidden;
+    position: relative;
+}
+
+/*=======================================================================================================*/
+
+/*圖片崁入區塊=============================================================================================*/
+
+img.one_1,
+img.one_2,
+img.one_3,
+img.two_1,
+img.two_2,
+img.three_1,
+img.fore_1,
+img.fore_2,
+img.fore_3,
+img.five_1,
+img.five_2,
+img.five_3,
+img.six_1,
+img.six_2,
+img.six_3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+}
+
+/**卡片rwd----------------------------------------------------------------------------------------------**/
+
+@media screen and (min-width: 1200px) and (max-width: 1399.98px) {}
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {}
+
+@media screen and (max-width: 575.98px) {
+    div.card {
+        max-width: 100%;
+        margin-bottom: 60px;
+    }
+
+    div.card-wrap {
+        width: 90%;
+    }
+
+    div.card_top {
+        /* border: 1px solid rgb(65, 12, 4); */
+        display: flex;
+    }
+
+    div.card_bottom_img {
+        /* border: 1px solid rgb(59, 92, 9); */
+        width: 90px;
+        height: 90px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    div.card_img {
+        /* border: 1px solid rgb(19, 3, 75); */
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+}
+
+/**===============================================================================================================**/
+
+/**置頂按鈕===========================================================**/
+.sticky-icon img {
+    position: fixed;
+    bottom: 50px;
+    right: 75px;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 200;
+    border: 3px solid #e9c27f;
+}
+
+
+/**版權聲明==============================================================================================**/
+
+div.earning_statement {
+    /* border: 1px solid rgb(255, 0, 0); */
+    background-color: #624a3a;
+    width: 100%;
+}
+
+div.earning_statement_wrap {
+    padding: 10px;
+    /* border: 2px solid rgb(53, 83, 218); */
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+div.earning_statement p {
+    word-break: normal;
+    color: rgb(255, 255, 255);
+    line-height: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1200px) and (max-width: 1399.98px) {}
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {}
+
+@media screen and (max-width: 575.98px) {}

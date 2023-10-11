@@ -1,0 +1,1155 @@
+* {
+    box-sizing: border-box;
+}
+
+/**body左右線==============================================================**/
+body {
+    position: relative;
+}
+
+div.body_reigt_line {
+    display: block;
+    width: 1.5px;
+    height: 100%;
+    background-color: #e9c27f;
+    position: absolute;
+    right: 100px;
+    z-index: 3;
+}
+
+div.body_left_line {
+    display: block;
+    width: 1.5px;
+    height: 100%;
+    background-color: #e9c27f;
+    position: absolute;
+    left: 100px;
+    z-index: 3;
+}
+
+/* body左右線--rwd設定OK-*/
+
+@media screen and (max-width: 1400px) {
+
+    div.body_reigt_line,
+    div.body_left_line {
+        display: none;
+    }
+}
+
+/**下方icon========================================================================**/
+
+div.service_lead {
+    /* border: 1px solid red;  */
+    display: flex;
+    justify-content: center;
+}
+
+div.service_lead img {
+    max-width: 40px;
+    padding: 36px 0;
+}
+
+/**--下方icon Rwd---------------------------------------------------------------------------------**/
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    div.service_lead {
+        /* border: 1px solid red;  */
+        display: flex;
+        justify-content: center;
+    }
+
+    div.service_lead img {
+        max-width: 30px;
+        padding: 25px 0 25px 0;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.service_lead {
+        /* border: 1px solid red;  */
+        display: flex;
+        justify-content: center;
+    }
+
+    div.service_lead img {
+        max-width: 30px;
+        padding: 0px 0 25px 0;
+    }
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    div.service_lead {
+        /* border: 1px solid red;  */
+        display: flex;
+        justify-content: center;
+    }
+
+    div.service_lead img {
+        max-width: 30px;
+        padding: 0px 0 25px 0;
+    }
+
+}
+
+@media screen and (max-width: 575.98px) {
+    div.service_lead {
+        /* border: 1px solid red;  */
+        display: flex;
+        justify-content: center;
+    }
+
+    div.service_lead img {
+        max-width: 30px;
+        padding: 0px 0 25px 0;
+    }
+
+}
+
+/*-----------------------------------------------------------------------------------------------**/
+
+/**==banner區塊-===================================================================================**/
+
+div.BN_Column {
+    /* border: 1px solid rgb(219, 17, 10); */
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+div.BN_Column_black {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.4;
+    z-index: 1;
+}
+
+img.BN_Column_img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+div.BN_Column_font p {
+    /* border: 1px solid rgb(219, 17, 10); */
+    white-space: nowrap;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+    line-height: 1.5;
+    font-size: 32px;
+    align-self: center;
+    color: white;
+    left: 15%;
+    top: 35%;
+    letter-spacing: .5rem;
+}
+
+div.BN_Column_font p {
+    animation: animated-text 2s steps(30, end) 1s 1 normal both;
+}
+
+@keyframes animated-text {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 472px;
+    }
+}
+
+/**--banner Rwd-------------------------------------------------------------------------**/
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    div.BN_Column {
+        border: 1px solid rgb(219, 17, 10);
+        height: 300px;
+    }
+
+    div.BN_Column_black {
+        border: 1px solid rgb(59, 84, 5);
+        width: 100%;
+        height: 500px;
+    }
+
+    div.BN_Column_font p {
+        border: 1px solid rgb(5, 95, 128);
+        line-height: 1.5;
+        font-size: 25px;
+        left: 12%;
+        top: 35%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.BN_Column {
+        border: 1px solid rgb(219, 17, 10);
+        height: 300px;
+    }
+
+    div.BN_Column_black {
+        border: 1px solid rgb(59, 84, 5);
+        width: 100%;
+        height: 500px;
+    }
+
+    div.BN_Column_font p {
+        border: 1px solid rgb(5, 95, 128);
+        line-height: 1.5;
+        font-size: 25px;
+        left: 12%;
+        top: 35%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    div.BN_Column {
+        border: 1px solid rgb(219, 17, 10);
+        height: 300px;
+    }
+
+    div.BN_Column_black {
+        border: 1px solid rgb(59, 84, 5);
+        width: 100%;
+        height: 500px;
+    }
+
+    div.BN_Column_font p {
+        border: 1px solid rgb(5, 95, 128);
+        line-height: 1.5;
+        font-size: 25px;
+        left: 12%;
+        top: 35%;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    div.BN_Column {
+        border: 1px solid rgb(219, 17, 10);
+        height: 200px;
+    }
+
+    div.BN_Column_black {
+        border: 1px solid rgb(59, 84, 5);
+        width: 100%;
+        height: 500px;
+    }
+
+    div.BN_Column_font p {
+        border: 1px solid rgb(5, 95, 128);
+        line-height: 1.5;
+        font-size: 16px;
+        left: 5%;
+        top: 35%;
+    }
+}
+
+/**----------------------------------------------------------------------------------------**/
+
+/**==標題==============================================================================**/
+
+
+div.team_items {
+    /* border: 1px solid red; */
+    text-align: center;
+}
+
+div.team_items h1 {
+    font-size: 44px;
+    font-family: "Cormorant Garamond", serif;
+    color: #e9c27f;
+    padding: 0px 0 12px 0;
+    letter-spacing: .8rem;
+}
+
+div.team_items p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    padding: 0px 0 36px 0;
+    letter-spacing: .4rem;
+    text-transform: uppercase;
+    color: rgb(72, 72, 72);
+    font-weight: 500;
+
+}
+
+div.team_items.two p {
+    padding: 0px 0 20px 0;
+}
+
+div.team_items.two {
+    /* border: 1px solid red; */
+    margin-top: 52px;
+    margin-bottom: 36px;
+}
+
+
+/**--標題Rwd-------------------------------------------------------------------------**/
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    div.team_items h1 {
+        font-size: 35px;
+        padding: 0px 0 12px 0;
+    }
+
+    div.team_items p {
+        font-size: 13px;
+        padding: 0px 0 25px 0;
+    }
+
+    div.team_items.two p {
+        padding: 0px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.team_items h1 {
+        font-size: 35px;
+        padding: 0px 0 12px 0;
+    }
+
+    div.team_items p {
+        font-size: 13px;
+        padding: 0px 0 25px 0;
+    }
+
+    div.team_items.two p {
+        padding: 0px;
+    }
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    div.team_items h1 {
+        font-size: 35px;
+        padding: 0px 0 12px 0;
+    }
+
+    div.team_items p {
+        font-size: 13px;
+        padding: 0px 0 25px 0;
+    }
+
+    div.team_items.two p {
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+
+    div.team_items h1 {
+        font-size: 35px;
+        padding: 0px 0 12px 0;
+    }
+
+    div.team_items p {
+        font-size: 13px;
+        padding: 0px 0 25px 0;
+    }
+
+    div.team_items.two p {
+        padding: 0px;
+    }
+
+}
+
+/**--標題Rwd-------------------------------------------------------------------------**/
+
+
+/**==婚禮籌備區塊-==================================================================**/
+
+div.WP_wrap01 {
+    /* border: 1px solid rgb(17, 68, 6); */
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.WP_items {
+    /* border: 1px solid rgb(91, 45, 243); */
+    width: calc((1200px - 40px) / 3);
+    text-align: center;
+}
+
+div.WP_img {
+    /* border: 1px solid rgb(91, 45, 243); */
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+img.WP_img_01,
+img.WP_img_02,
+img.WP_img_03 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+div.WP_form {
+    line-height: 28px;
+}
+
+div.WP_form p.form_time {
+    font-size: 16px;
+    letter-spacing: .3rem;
+    color: #8A6969;
+    margin: 5px 0;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+div.WP_form h2 {
+    /* border: 1px solid rgb(6, 102, 30); */
+    font-size: 20px;
+    margin-bottom: 5px;
+    letter-spacing: .3rem;
+    font-family: "Cormorant Garamond", serif;
+}
+
+div.form_item {
+    font-size: 16px;
+    letter-spacing: .3rem;
+}
+
+
+/**--婚禮籌備區塊Rwd-------------------------------------------------------------------------**/
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    div.WP_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 90%;
+    }
+
+    div.WP_items {
+        /* border: 1px solid rgb(91, 45, 243); */
+        width: calc((100% - 20px) / 3);
+        text-align: center;
+    }
+
+    div.WP_img {
+        /* border: 1px solid rgb(91, 45, 243); */
+        height: 150px;
+    }
+
+    div.WP_form h2 {
+        /* border: 1px solid rgb(6, 102, 30); */
+        font-size: 18px;
+
+    }
+
+    div.form_item {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.WP_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 90%;
+    }
+
+    div.WP_items {
+        /* border: 1px solid rgb(91, 45, 243); */
+        width: calc((100% - 20px) / 3);
+        text-align: center;
+    }
+
+    div.WP_img {
+        /* border: 1px solid rgb(91, 45, 243); */
+        height: 150px;
+    }
+
+    div.WP_form h2 {
+        /* border: 1px solid rgb(6, 102, 30); */
+        font-size: 18px;
+
+    }
+
+    div.form_item {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    div.WP_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 75%;
+        display: block;
+        justify-content: space-between;
+    }
+
+    div.WP_items {
+        border: 2px solid #e9c27f;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    div.form_item {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    div.WP_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 85%;
+        display: block;
+        justify-content: space-between;
+    }
+
+    div.WP_items {
+        border: 2px solid #e9c27f;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    div.form_item {
+        margin-bottom: 10px;
+    }
+
+}
+
+/**--------------------------------------------------------------------------------------**/
+
+
+
+/**==新人彩妝-==================================================================**/
+
+
+div.MP_wrap01 {
+    /* border: 1px solid rgb(17, 68, 6); */
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.MP_items {
+    /* border: 1px solid rgb(91, 45, 243); */
+    width: calc((1200px - 40px) / 3);
+    text-align: center;
+}
+
+div.MP_img {
+    /* border: 1px solid rgb(91, 45, 243); */
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+img.MP_img_01 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+img.MP_img_02 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+img.MP_img_03 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+div.MP_form {
+    line-height: 28px;
+}
+
+div.MP_form p.form_time {
+    font-size: 16px;
+    letter-spacing: .3rem;
+    color: #8A6969;
+    margin: 5px 0;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+div.MP_form h2 {
+    /* border: 1px solid rgb(6, 102, 30); */
+    font-size: 20px;
+    margin-bottom: 5px;
+    letter-spacing: .3rem;
+    font-family: "Cormorant Garamond", serif;
+}
+
+div.form_item {
+    font-size: 16px;
+    letter-spacing: .3rem;
+}
+
+/**--新人彩妝Rwd-------------------------------------------------------------------------**/
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    div.MP_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 90%;
+    }
+
+    div.MP_items {
+        /* border: 1px solid rgb(91, 45, 243); */
+        width: calc((100% - 20px) / 3);
+        text-align: center;
+    }
+
+    div.MP_img {
+        /* border: 1px solid rgb(91, 45, 243); */
+        height: 150px;
+    }
+
+    div.MP_form h2 {
+        /* border: 1px solid rgb(6, 102, 30); */
+        font-size: 18px;
+
+    }
+
+    div.form_item {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.MP_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 90%;
+    }
+
+    div.MP_items {
+        /* border: 1px solid rgb(91, 45, 243); */
+        width: calc((100% - 20px) / 3);
+        text-align: center;
+    }
+
+    div.MP_img {
+        /* border: 1px solid rgb(91, 45, 243); */
+        height: 150px;
+    }
+
+    div.MP_form h2 {
+        /* border: 1px solid rgb(6, 102, 30); */
+        font-size: 18px;
+
+    }
+
+    div.form_item {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    div.MP_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 75%;
+        display: block;
+        justify-content: space-between;
+    }
+
+    div.MP_items {
+        border: 2px solid #e9c27f;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    div.form_item {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    div.MP_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 85%;
+        display: block;
+        justify-content: space-between;
+    }
+
+    div.MP_items {
+        border: 2px solid #e9c27f;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    div.form_item {
+        margin-bottom: 10px;
+    }
+
+}
+
+
+/**==婚紗推薦-==================================================================**/
+
+div.WDS_wrap01 {
+    /* border: 1px solid rgb(17, 68, 6); */
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.WDS_items {
+    /* border: 1px solid rgb(91, 45, 243); */
+    width: calc((1200px - 40px) / 3);
+    text-align: center;
+}
+
+div.WDS_img {
+    /* border: 1px solid rgb(91, 45, 243); */
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+img.WDS_img_01 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+img.WDS_img_02 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+img.WDS_img_03 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+div.WDS_form {
+    line-height: 28px;
+}
+
+div.WDS_form p.form_time {
+    font-size: 16px;
+    letter-spacing: .3rem;
+    color: #8A6969;
+    margin: 5px 0;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+div.WDS_form h2 {
+    /* border: 1px solid rgb(6, 102, 30); */
+    font-size: 20px;
+    margin-bottom: 5px;
+    letter-spacing: .3rem;
+    font-family: "Cormorant Garamond", serif;
+}
+
+div.form_item {
+    font-size: 16px;
+    letter-spacing: .3rem;
+}
+
+
+/**--婚紗推薦Rwd-------------------------------------------------------------------------**/
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    div.WDS_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 90%;
+    }
+
+    div.WDS_items {
+        /* border: 1px solid rgb(91, 45, 243); */
+        width: calc((100% - 20px) / 3);
+        text-align: center;
+    }
+
+    div.WDS_img {
+        /* border: 1px solid rgb(91, 45, 243); */
+        height: 150px;
+    }
+
+    div.WDS_form h2 {
+        /* border: 1px solid rgb(6, 102, 30); */
+        font-size: 18px;
+
+    }
+
+    div.form_item {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.WDS_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 90%;
+    }
+
+    div.WDS_items {
+        /* border: 1px solid rgb(91, 45, 243); */
+        width: calc((100% - 20px) / 3);
+        text-align: center;
+    }
+
+    div.WDS_img {
+        /* border: 1px solid rgb(91, 45, 243); */
+        height: 150px;
+    }
+
+    div.WDS_form h2 {
+        /* border: 1px solid rgb(6, 102, 30); */
+        font-size: 18px;
+
+    }
+
+    div.form_item {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    div.WDS_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 75%;
+        display: block;
+        justify-content: space-between;
+    }
+
+    div.WDS_items {
+        border: 2px solid #e9c27f;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    div.form_item {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+
+    div.WDS_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 85%;
+        display: block;
+        justify-content: space-between;
+    }
+
+    div.WDS_items {
+        border: 2px solid #e9c27f;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    div.form_item {
+        margin-bottom: 10px;
+    }
+}
+
+/**==攝影風格區塊==================================================================**/
+
+div.WPS {
+    /* border: 1px solid rgb(219, 17, 10); */
+    margin-bottom: 160px;
+}
+
+div.WPS_wrap01 {
+    /* border: 1px solid rgb(17, 68, 6); */
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.WPS_items {
+    /* border: 1px solid rgb(91, 45, 243); */
+    width: calc((1200px - 40px) / 3);
+    text-align: center;
+}
+
+div.WPS_img {
+    /* border: 1px solid rgb(91, 45, 243); */
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+img.WPS_img_01 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+img.WPS_img_02 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+img.WPS_img_03 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+div.WPS_form {
+    line-height: 28px;
+}
+
+div.WPS_form p.form_time {
+    font-size: 16px;
+    letter-spacing: .3rem;
+    color: #8A6969;
+    margin: 5px 0;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+div.WPS_form h2 {
+    /* border: 1px solid rgb(6, 102, 30); */
+    font-size: 20px;
+    margin-bottom: 5px;
+    letter-spacing: .3rem;
+    font-family: "Cormorant Garamond", serif;
+}
+
+div.form_item {
+    font-size: 16px;
+    letter-spacing: .3rem;
+}
+
+
+/**--攝影風格區塊Rwd-------------------------------------------------------------------------**/
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    div.WPS {
+        /* border: 1px solid rgb(219, 17, 10); */
+        margin-bottom: 50px;
+    }
+
+    div.WPS_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 90%;
+    }
+
+    div.WPS_items {
+        /* border: 1px solid rgb(91, 45, 243); */
+        width: calc((100% - 20px) / 3);
+        text-align: center;
+    }
+
+    div.WPS_img {
+        /* border: 1px solid rgb(91, 45, 243); */
+        height: 150px;
+    }
+
+    div.WPS_form h2 {
+        /* border: 1px solid rgb(6, 102, 30); */
+        font-size: 18px;
+
+    }
+
+    div.form_item {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.WPS {
+        /* border: 1px solid rgb(219, 17, 10); */
+        margin-bottom: 50px;
+    }
+
+    div.WPS_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 90%;
+    }
+
+    div.WPS_items {
+        /* border: 1px solid rgb(91, 45, 243); */
+        width: calc((100% - 20px) / 3);
+        text-align: center;
+    }
+
+    div.WPS_img {
+        /* border: 1px solid rgb(91, 45, 243); */
+        height: 150px;
+    }
+
+    div.WPS_form h2 {
+        /* border: 1px solid rgb(6, 102, 30); */
+        font-size: 18px;
+
+    }
+
+    div.form_item {
+        font-size: 15px;
+    }
+
+    div.form_item {
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    div.WPS {
+        /* border: 1px solid rgb(219, 17, 10); */
+        margin-bottom: 50px;
+    }
+
+    div.WPS_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 75%;
+        display: block;
+        justify-content: space-between;
+    }
+
+    div.WPS_items {
+        border: 2px solid #e9c27f;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    div.form_item {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    div.WPS {
+        /* border: 1px solid rgb(219, 17, 10); */
+        margin-bottom: 50px;
+    }
+
+    div.WPS_wrap01 {
+        /* border: 1px solid rgb(17, 68, 6); */
+        width: 85%;
+        display: block;
+        justify-content: space-between;
+    }
+
+    div.WPS_items {
+        border: 2px solid #e9c27f;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    div.form_item {
+        margin-bottom: 10px;
+    }
+}
+
+/**置頂按鈕===========================================================**/
+.sticky-icon img {
+    position: fixed;
+    bottom: 50px;
+    right: 75px;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 200;
+    border: 3px solid #e9c27f;
+}
+
+/**版權聲明====================================================================**/
+
+div.earning_statement {
+    /* border: 1px solid rgb(255, 0, 0); */
+    background-color: #624a3a;
+    width: 100%;
+}
+
+div.earning_statement_wrap {
+    padding: 10px;
+    /* border: 2px solid rgb(53, 83, 218); */
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+div.earning_statement p {
+    word-break: normal;
+    color: rgb(255, 255, 255);
+    line-height: 25px;
+}

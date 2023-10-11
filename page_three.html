@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倆倆拾光</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link rel="stylesheet" href="./CSS/page_three.css">
+
+    <!---字體鏈結--------------------------------------------------------------------------------------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow&family=Dancing+Script&family=Kanit:ital,wght@1,100&family=Lato:ital@0;1&family=Raleway&family=Roboto:wght@100&family=Yellowtail&display=swap"
+        rel="stylesheet">
+    <!---字體鏈結--------------------------------------------------------------------------------------------------------------->
+
+</head>
+
+<body>
+
+    <!--側邊倆線條----------------------------------------------------------------------------------------------------------------------->
+    <div class="body_left_line"></div>
+    <div class="body_reigt_line"></div>
+
+    <!---------------------------------------------------------------------------------------------------------------------------------->
+    <!--導覽列區塊 ---------------------------------------------------------------------------------------------------------------------->
+
+    <!--漢堡選單按鈕-->
+
+    <input type="checkbox" name="" id="menu-control" />
+
+    <div class="header">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="./img/logo-01.svg" alt="logo" />
+            </a>
+        </div>
+
+        <!--漢堡選單 點選 label 標籤觸發上面的 checkbox -->
+        <label for="menu-control" class="menu-btn">
+            <span>選單</span>
+        </label>
+
+        <nav class="navbar">
+            <a href="page_two.html">團隊介紹</a>
+            <a href="page_three.html">攝影作品</a>
+            <a href="page_four.html">攝影方案</a>
+            <a href="page_five.html">婚禮專欄</a>
+            <a href="page_six.html">好評推薦</a>
+            <a href="page_seven.html">線上預約</a>
+            <a href="page_eight.html">
+                <img class="search" src="./img/user.svg">
+            </a>
+        </nav>
+    </div>
+
+
+    <!-------------------------------------------------------------------------------------------------------------------------------->
+    <!--攝影精選區塊-標題 -------------------------------------------------------------------------------------------------------------->
+
+    <div class="team_items">
+
+        <h1>攝影精選</h1>
+        <p>Featured</p>
+
+    </div>
+
+    <!-------------------------------------------------------------------------------------------------------------------------------->
+    <!--攝影精選區塊 ------------------------------------------------------------------------------------------------------------------>
+
+
+    <div class="featured_one">
+
+        <div class="featured_bg">
+            <img class="bg_center" src="./img/pexels-sergio-souza-1779491.jpg" alt="banner">
+            <img class="bg_center" src="./img/03-102.jpg" alt="banner">
+            <img class="bg_center" src="./img/004.jpg" alt="banner">
+        </div>
+
+        <div class="shift">
+            <button class="btn left" onclick="leftShift()">&lt;</button>
+            <button class="btn right" onclick="rightShift()">&gt;</button>
+        </div>
+
+        <div class="bottom">
+            <button class="indicator" onclick="setIndex(0)"></button>
+            <button class="indicator" onclick="setIndex(1)"></button>
+            <button class="indicator" onclick="setIndex(2)"></button>
+        </div>
+
+    </div>
+
+    <!-------------------------------------------------------------------------------------------------------------------------------->
+
+    <div class="grid">
+
+        <div class="grid_item">
+
+            <div class="item left">
+
+                <div class="item_img">
+                    <div></div>
+                    <img src="./img/DSC04280.jpg" alt="第一圖">
+                    <p>see more</p>
+                </div>
+
+                <div class="item fonts">
+                    <p>情侶寫真 Ping & Colin</p>
+                    <p>台灣 台北</p>
+                </div>
+
+            </div>
+
+            <div class="item center">
+
+                <div class="item_img">
+                    <div></div>
+                    <img src="./img/family.jpg" alt="第二圖">
+                    <p>see more</p>
+                </div>
+
+                <div class="item fonts">
+                    <p>家庭寫真 Pingo Family</p>
+                    <p>台灣 台中</p>
+                </div>
+
+            </div>
+
+            <div class="item right">
+
+                <div class="item_img">
+                    <div></div>
+                    <img src="./img/MAR_0096.jpg" alt="第三圖">
+                    <p>see more</p>
+                </div>
+
+                <div class="item fonts">
+                    <p>自助婚紗 Ging & liolin</p>
+                    <p>台北 台灣</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+
+    <!--攝影分類作品區塊-標題  ------------------------------------------------------------------------------------------------------------->
+    <div class="team_items two">
+
+        <h1>攝影分類作品</h1>
+        <p>Category Selection</p>
+
+    </div>
+
+    <!--攝影分類作品區塊 ------------------------------------------------------------------------------------------------------------------>
+    <div class="fore_label">
+        <div class="fore_label_img">
+            <img src="./img/bottom-01.svg" alt="下箭頭">
+        </div>
+
+        <p><a href="#">海外婚紗</a></p>
+        <p><a href="#">情侶寫真</a></p>
+        <p><a href="#">家庭寫真</a></p>
+        <p><a href="#">孕婦寫真</a></p>
+
+        <div class="fore_label_img">
+            <img src="./img/bottom-01.svg" alt="下箭頭">
+        </div>
+    </div>
+
+
+
+    <div class="fore">
+
+        <div class="fore_wrap">
+
+            <div class="fore_item one">
+
+                <div class="fore_item_one_img">
+                    <div></div>
+                    <img src="./img/pexels.jpg" alt="第一圖">
+                    <p>see more</p>
+                </div>
+
+                <div class="fore_item_fonts">
+                    <p>海外婚紗 V&C</p>
+                    <p>法國巴黎 PARIS</p>
+                </div>
+
+            </div>
+
+            <div class="fore_item two">
+
+                <div class="fore_item_two_img">
+                    <div></div>
+                    <img src="./img/japan.jpg" alt="第二圖">
+                    <p>see more</p>
+                </div>
+
+                <div class="fore_item_fonts">
+                    <p>京都婚紗 Joavian&Benny</p>
+                    <p>日本京都 (櫻花婚紗)</p>
+                </div>
+
+            </div>
+
+            <div class="fore_item three">
+
+                <div class="fore_item_three_img">
+                    <div></div>
+                    <img src="./img/sea.jpg" alt="第三圖">
+                    <p>see more</p>
+                </div>
+
+                <div class="fore_item_fonts">
+                    <p>海外婚紗 Kay&Terence</p>
+                    <p>馬爾地夫 MAIDIVES</p>
+                </div>
+
+            </div>
+
+            <div class="fore_item four">
+
+                <div class="fore_item_four_img">
+                    <div></div>
+                    <img src="./img/hawall.jpg" alt="第四圖">
+                    <p>see more</p>
+                </div>
+
+                <div class="fore_item_fonts">
+                    <p>海外婚紗 Kin&Terce</p>
+                    <p>夏威夷 HAWAII</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--置頂按鈕 ------------------------------------------------------------------>
+
+    <div class="sticky-icon">
+        <img src="../mywed/img/Vector.svg" alt="">
+    </div>
+
+    <!--footer 區塊 ------------------------------------------------------------------------------------------------------------------>
+
+    <footer>
+
+        <div class="footer_wrap">
+
+            <img class="footer_logo" src="./img/logo-01.svg">
+
+            <div class="footer_font0ne">
+                <h6>CONTACT US</h6>
+                <p>電話｜09-58586468</p>
+                <p>信箱｜s86682356@tibame.com</p>
+                <p>地址｜新北市永和區中和路三段64巷</p>
+            </div>
+
+            <div class="footer_fonttwo">
+                <h6>CONTACT US</h6>
+                <div class="ul_iteam">
+                    <ul class="ul_one">
+                        <li><a href="page_two.html" target="_blank">團隊介紹</a></li>
+                        <li><a href="page_three.html" target="_blank">攝影作品</a></li>
+                        <li><a href="page_four.html" target="_blank">攝影方案</a></li>
+                    </ul>
+                    <ul class="ul_two">
+                        <li><a href="page_seven.html" target="_blank">線上預約</a></li>
+                        <li><a href="page_six.html" target="_blank">好評推薦</a></li>
+                        <li><a href="page_five.html" target="_blank">婚禮專欄</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer_icon">
+
+                <div class="footer_img">
+                    <img src="./img/ig_w.svg" alt="">
+                    <img src="./img/face_w.svg" alt="">
+                    <img src="./img/youtobe_w.svg" alt="">
+                </div>
+
+                <div class="footer_icon_font">
+                    <p>服務聲明</p>
+                    <p>隱私權聲明</p>
+                    <p>聯絡我們</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="copy_right">
+            <p>© KNIGHT CLUB HELMET CO. ALL RIGHTS RESERVED</p>
+        </div>
+
+    </footer>
+
+    <!--版權聲明區塊 ------------------------------------------------------------------------------------------------------------------>
+
+    <div class="earning_statement">
+        <div class="earning_statement_wrap">
+            <p>本網站為緯育TibaMe前端工程師專業技術養成班THD103學員專題作品，本平台僅供學習、展示之用。若有侵權疑慮，
+                您可以私訊 [緯育TibaMe] ，後續會由專人協助處理。。參考資源 : 焱木攝影工作室 JOJO婚紗攝影 。</p>
+        </div>
+    </div>
+
+    <script src="./JS/page_three.js"></script>
+
+</body>
+
+</html>

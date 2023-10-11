@@ -1,0 +1,1757 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+/*body左右線=======================================================================================**/
+
+body {
+    position: relative;
+}
+
+div.body_reigt_line {
+    position: fixed;
+    width: 1.7px;
+    height: 100%;
+    background-color: #e9c27f;
+    right: 100px;
+    z-index: 2;
+}
+
+div.body_left_line {
+    position: fixed;
+    width: 2px;
+    height: 100%;
+    background-color: #e9c27f;
+    left: 100px;
+    z-index: 2;
+}
+
+/* body左右線---------------------------------------------------------------------------------------- RWD OK **/
+
+@media screen and (max-width: 1400px) {
+
+    div.body_reigt_line,
+    div.body_left_line {
+        display: none;
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
+
+
+/*banner=======================================================================================================================*/
+
+:root {
+    --img-current: "../img/banner/01.jpg";
+    --img-next: "../img/banner/02.jpg";
+    --text-current-title: "WEDDING";
+    --text-next-title: "couple";
+    --text-current-subtitle: "倆倆拾光";
+    --text-next-subtitle: "倆倆拾光";
+}
+
+div.move {
+    position: relative;
+    width: 100%;
+}
+
+main {
+    margin: 0;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
+    color: #fff;
+}
+
+div.chick {
+    /*按鈕*/
+    position: absolute;
+    right: 130px;
+    bottom: 45px;
+    z-index: 30;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+div.chick>* {
+    /*按鈕*/
+    flex: 1 1 100%;
+    padding: 2rem;
+}
+
+main {
+    position: relative;
+    width: 100vw;
+    height: 800px;
+    overflow: hidden;
+}
+
+main h1,
+main h2 {
+    display: block;
+    text-wrap: nowrap;
+    margin: 0;
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+    /* inset矩形 裁剪方式創建元素的可顯示區域 */
+}
+
+main h1::before,
+main h2::before {
+    transition-delay: 0.5s;
+    transform: translate(-50%, 0%);
+}
+
+main h1 {
+    font-family: "Literata";
+    font-weight: 200;
+    height: clamp(2rem, 8vw, 4rem);
+    font-size: clamp(2rem, 8vw, 4rem);
+    letter-spacing: clamp(0.2rem, 4vw, 5rem);
+    margin-left: clamp(0.5rem, 5vw, 10rem);
+}
+
+main h1::before,
+main h1::after {
+    content: var(--text-current-title);
+    position: absolute;
+    line-height: 1;
+    color: #e9c27f;
+    -webkit-text-stroke: 1px #fff;
+    /* 設定字符的邊框宽度和筆觸颜色 */
+    font-weight: bold;
+    text-shadow: 0 0 10px rgb(77, 7, 7);
+}
+
+main h1::after {
+    content: var(--text-next-title);
+    transition-delay: 0.5s;
+    transform: translate(-50%, 100%);
+    text-shadow: 0 0 10px rgb(77, 7, 7);
+}
+
+main h2 {
+    height: clamp(0.9rem, 2vw, 1.1rem);
+    /*把一个值限制在一个上限和下限之間 最小值、首選值、最大值*/
+    font-size: clamp(1.3rem, 2vw, 1.1rem);
+    letter-spacing: clamp(0.5rem, 3vw, 5rem);
+    margin-left: clamp(0.5rem, 3vw, 5rem);
+    font-weight: 400;
+    text-shadow: 0 0 10px rgb(77, 7, 7);
+}
+
+main h2::before,
+main h2::after {
+    content: var(--text-current-subtitle);
+    position: absolute;
+    line-height: 1;
+}
+
+main h2::after {
+    content: var(--text-next-subtitle);
+    /* 插入一个自定義属性 來改變值*/
+    transition-delay: 0.5s;
+    transform: translate(-50%, -100%);
+}
+
+.background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    transform: translate(-50%, -50%);
+    /* 定位位置: 水平0 垂直0 中心點 */
+    filter: brightness(90%);
+    /* 調整畫面亮或暗 */
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.background::before,
+.background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /*控制上左下右的間距*/
+    background-size: 100%;
+    background-position: 0% 50%;
+    /* 背景位置:水平 垂直 */
+    transition: all 1.5s;
+    /* 全部轉場效果都1.5秒 */
+    transition-timing-function: ease-in-out;
+    /* 轉換計時功能：緩入緩出 */
+    background-repeat: no-repeat;
+    object-fit: cover;
+    /* 圖片全部覆蓋 */
+}
+
+.background::before {
+    background-image: var(--img-current);
+}
+
+.background::after {
+    background-image: var(--img-next);
+    opacity: 0;
+}
+
+.background--2::after {
+    transition-delay: 0.2s;
+}
+
+.background--3::after {
+    transition-delay: 0.4s;
+}
+
+.background--2::before,
+.background--2::after {
+    clip-path: circle(35%);
+    filter: brightness(0.6);
+}
+
+.background--3::before,
+.background--3::after {
+    clip-path: circle(25%);
+}
+
+.body--animated .background::before,
+.body--animated .background::after {
+    animation: rotate ease-in-out 1s forwards;
+    animation-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+
+.body--animated .background--2::before,
+.body--animated .background--2::after {
+    animation-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.body--animated .background--3::before,
+.body--animated .background--3::after {
+    animation-delay: 0s;
+    transition-delay: 0s;
+}
+
+.body--animated .background::after {
+    opacity: 1;
+}
+
+.body--animated main h1::before,
+.body--animated main h2::before,
+.body--animated main h1::after,
+.body--animated main h2::after {
+    transition-delay: 0.2s;
+    transition-duration: 0.2s;
+}
+
+.body--animated main h1:before {
+    transform: translate(-50%, -100%);
+}
+
+.body--animated main h1:after {
+    transform: translate(-50%, 0%);
+}
+
+.body--animated main h2:before {
+    transform: translate(-50%, 100%);
+}
+
+.body--animated main h2:after {
+    transform: translate(-50%, 0%);
+}
+
+.content {
+    /*文字區域*/
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    width: 95%;
+    text-align: center;
+    transform: translate(-50%, clamp(-2rem, -4vw, -1rem));
+}
+
+.content div.line {
+    /*分隔線*/
+    max-width: 600px;
+    height: 3px;
+    margin: clamp(1rem, 5vw, 2.5rem) auto;
+    background-color: #e9c27f;
+}
+
+.randomize {
+    /*按鈕*/
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.randomize button {
+    /*按鈕*/
+    background: #624a3a;
+    color: white;
+    outline: 3px solid #e9c27f;
+    width: clamp(2rem, 4vw, 4rem);
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 50%;
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    cursor: pointer;
+}
+
+/* animation */
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0) translateZ(0);
+        background-size: 100% 100%;
+    }
+
+    50% {
+        background-size: 150% 150%;
+    }
+
+    100% {
+        transform: rotate(360deg) translateZ(0);
+        background-size: 100% 100%;
+    }
+}
+
+/* banner-rwd設定---------------------------------------------------------------------------------------RWD OK*/
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    .background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        aspect-ratio: 1/1;
+        transform: translate(-50%, -50%);
+        /* 定位位置: 水平0 垂直0 中心點 */
+        filter: brightness(90%);
+        /* 調整畫面亮或暗 */
+        background-repeat: no-repeat;
+        object-fit: cover;
+    }
+
+    main {
+        /* border: 2px solid red; */
+        position: relative;
+        width: 100vw;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .content {
+        /*文字區域*/
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        width: 95%;
+        height: 100px;
+        text-align: center;
+        transform: translate(-50%, clamp(-2rem, -4vw, -1rem));
+    }
+
+    .content div.line {
+        /*分隔線*/
+        max-width: 250px;
+        height: 2px;
+        margin: clamp(1rem, 3vw, 2.5rem) auto;
+        background-color: #e9c27f;
+    }
+
+    main h2 {
+        height: clamp(0.9rem, 4vw, 1.1rem);
+        /*把一个值限制在一个上限和下限之間 最小值、首選值、最大值*/
+        font-size: clamp(1.3rem, 3vw, 1.5rem);
+        letter-spacing: clamp(0.5rem, 3vw, 5rem);
+        margin-left: clamp(0.5rem, 3vw, 5rem);
+        font-weight: 400;
+        text-shadow: 0 0 10px rgb(77, 7, 7);
+    }
+
+    .randomize button {
+        /*按鈕*/
+        background: #7e3b0c;
+        color: white;
+        outline: 3px solid #e9c27f;
+        width: clamp(2rem, 80vw, 3rem);
+        aspect-ratio: 1/1;
+        border: none;
+        border-radius: 50%;
+        font-size: clamp(1rem, 80vw, 1.5rem);
+        cursor: pointer;
+    }
+
+    div.chick {
+        /*按鈕*/
+        position: absolute;
+        right: 6px;
+        bottom: 6px;
+        z-index: 30;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    main h2::before {
+        transition-delay: 0.5s;
+        transform: translate(-50%, -10%);
+    }
+
+    main h1 {
+        font-family: "Literata";
+        font-weight: 200;
+        height: clamp(2rem, 5vw, 4rem);
+        font-size: clamp(2rem, 6vw, 4rem);
+        letter-spacing: clamp(0.2rem, 4vw, 5rem);
+        margin-left: clamp(0.5rem, 5vw, 10rem);
+    }
+
+    main h1::before {
+        transition-delay: 0.5s;
+        transform: translate(-50%, -10%);
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        aspect-ratio: 1/1;
+        transform: translate(-50%, -50%);
+        /* 定位位置: 水平0 垂直0 中心點 */
+        filter: brightness(90%);
+        /* 調整畫面亮或暗 */
+        background-repeat: no-repeat;
+        object-fit: cover;
+    }
+
+    main {
+        /* border: 2px solid red; */
+        position: relative;
+        width: 100vw;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .content {
+        /*文字區域*/
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        width: 95%;
+        height: 100px;
+        text-align: center;
+        transform: translate(-50%, clamp(-2rem, -4vw, -1rem));
+    }
+
+    .content div.line {
+        /*分隔線*/
+        max-width: 250px;
+        height: 2px;
+        margin: clamp(1rem, 3vw, 2.5rem) auto;
+        background-color: #e9c27f;
+    }
+
+    main h2 {
+        height: clamp(0.9rem, 4vw, 1.1rem);
+        /*把一个值限制在一个上限和下限之間 最小值、首選值、最大值*/
+        font-size: clamp(1.3rem, 3vw, 1.5rem);
+        letter-spacing: clamp(0.5rem, 3vw, 5rem);
+        margin-left: clamp(0.5rem, 3vw, 5rem);
+        font-weight: 400;
+        text-shadow: 0 0 10px rgb(77, 7, 7);
+    }
+
+    .randomize button {
+        /*按鈕*/
+        background: #7e3b0c;
+        color: white;
+        outline: 3px solid #e9c27f;
+        width: clamp(2rem, 80vw, 3rem);
+        aspect-ratio: 1/1;
+        border: none;
+        border-radius: 50%;
+        font-size: clamp(1rem, 80vw, 1.5rem);
+        cursor: pointer;
+    }
+
+    div.chick {
+        /*按鈕*/
+        position: absolute;
+        right: 6px;
+        bottom: 6px;
+        z-index: 30;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    main h2::before {
+        transition-delay: 0.5s;
+        transform: translate(-50%, -10%);
+    }
+
+    main h1 {
+        font-family: "Literata";
+        font-weight: 200;
+        height: clamp(2rem, 5vw, 4rem);
+        font-size: clamp(2rem, 6vw, 4rem);
+        letter-spacing: clamp(0.2rem, 4vw, 5rem);
+        margin-left: clamp(0.5rem, 5vw, 10rem);
+    }
+
+    main h1::before {
+        transition-delay: 0.5s;
+        transform: translate(-50%, -10%);
+    }
+
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    .background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 800px;
+        aspect-ratio: 1/1;
+        transform: translate(-50%, -50%);
+        /* 定位位置: 水平0 垂直0 中心點 */
+        filter: brightness(90%);
+        /* 調整畫面亮或暗 */
+        background-repeat: no-repeat;
+        object-fit: cover;
+    }
+
+    main {
+        /* border: 2px solid red; */
+        position: relative;
+        width: 100vw;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .content {
+        /*文字區域*/
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        width: 95%;
+        height: 100px;
+        text-align: center;
+        transform: translate(-50%, clamp(-2rem, -4vw, -1rem));
+    }
+
+    .content div.line {
+        /*分隔線*/
+        max-width: 250px;
+        height: 2px;
+        margin: clamp(1rem, 3vw, 2.5rem) auto;
+        background-color: #e9c27f;
+    }
+
+    main h2 {
+        height: clamp(0.9rem, 4vw, 1.1rem);
+        /*把一个值限制在一个上限和下限之間 最小值、首選值、最大值*/
+        font-size: clamp(1.3rem, 3vw, 1.5rem);
+        letter-spacing: clamp(0.5rem, 3vw, 5rem);
+        margin-left: clamp(0.5rem, 3vw, 5rem);
+        font-weight: 400;
+        text-shadow: 0 0 10px rgb(77, 7, 7);
+    }
+
+    .randomize button {
+        /*按鈕*/
+        background: #7e3b0c;
+        color: white;
+        outline: 3px solid #e9c27f;
+        width: clamp(2rem, 80vw, 3rem);
+        aspect-ratio: 1/1;
+        border: none;
+        border-radius: 50%;
+        font-size: clamp(1rem, 80vw, 1.5rem);
+        cursor: pointer;
+    }
+
+    div.chick {
+        /*按鈕*/
+        position: absolute;
+        right: 6px;
+        bottom: 6px;
+        z-index: 30;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    main h2::before {
+        transition-delay: 0.5s;
+        transform: translate(-50%, -10%);
+    }
+
+    main h1 {
+        font-family: "Literata";
+        font-weight: 200;
+        height: clamp(2rem, 5vw, 4rem);
+        font-size: clamp(2rem, 6vw, 4rem);
+        letter-spacing: clamp(0.2rem, 4vw, 5rem);
+        margin-left: clamp(0.5rem, 5vw, 10rem);
+    }
+
+    main h1::before {
+        transition-delay: 0.5s;
+        transform: translate(-50%, -10%);
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+
+    .background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 600px;
+        aspect-ratio: 1/1;
+        transform: translate(-50%, -50%);
+        /* 定位位置: 水平0 垂直0 中心點 */
+        filter: brightness(90%);
+        /* 調整畫面亮或暗 */
+        background-repeat: no-repeat;
+        object-fit: cover;
+    }
+
+    main {
+        /* border: 2px solid red; */
+        position: relative;
+        width: 100vw;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .content {
+        /*文字區域*/
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        width: 95%;
+        height: 100px;
+        text-align: center;
+        transform: translate(-50%, clamp(-2rem, -4vw, -1rem));
+    }
+
+    .content div.line {
+        /*分隔線*/
+        max-width: 250px;
+        height: 2px;
+        margin: clamp(1rem, 3vw, 2.5rem) auto;
+        background-color: #e9c27f;
+    }
+
+    main h2 {
+        height: clamp(0.9rem, 4vw, 1.1rem);
+        /*把一个值限制在一个上限和下限之間 最小值、首選值、最大值*/
+        font-size: clamp(1.3rem, 3vw, 1.5rem);
+        letter-spacing: clamp(0.5rem, 3vw, 5rem);
+        margin-left: clamp(0.5rem, 3vw, 5rem);
+        font-weight: 400;
+        text-shadow: 0 0 10px rgb(77, 7, 7);
+    }
+
+    .randomize button {
+        /*按鈕*/
+        background: #7e3b0c;
+        color: white;
+        outline: 3px solid #e9c27f;
+        width: clamp(2rem, 80vw, 3rem);
+        aspect-ratio: 1/1;
+        border: none;
+        border-radius: 50%;
+        font-size: clamp(1rem, 80vw, 1.5rem);
+        cursor: pointer;
+    }
+
+    div.chick {
+        /*按鈕*/
+        position: absolute;
+        right: 6px;
+        bottom: 6px;
+        z-index: 30;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    main h2::before {
+        transition-delay: 0.5s;
+        transform: translate(-50%, -10%);
+    }
+
+    main h1 {
+        font-family: "Literata";
+        font-weight: 200;
+        height: clamp(2rem, 5vw, 4rem);
+        font-size: clamp(2rem, 11vw, 4rem);
+        letter-spacing: clamp(0.2rem, 4vw, 5rem);
+        margin-left: clamp(0.5rem, 5vw, 10rem);
+    }
+
+    main h1::before {
+        transition-delay: 0.5s;
+        transform: translate(-50%, -10%);
+    }
+
+
+
+}
+
+/*------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*最新消息--標題 ========================================================================================= RWD OK **/
+
+div.latest_news {
+    /* border: 1px solid red; */
+    text-align: center;
+}
+
+div.latest_news h1 {
+    font-size: 50px;
+    font-family: "Cormorant Garamond", serif;
+    color: #e9c27f;
+    letter-spacing: .8rem;
+    padding: 60px 0 12px 0;
+}
+
+div.latest_news p {
+    font-size: 13px;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(72, 72, 72);
+    letter-spacing: .4rem;
+    padding: 0px 0 35px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/*最新消息--標題 ------------------------------------------------------------------------------------ RWD OK **/
+
+@media screen and (max-width: 576px) {
+    div.latest_news h1 {
+        font-size: 35px;
+        padding: 50px 0 12px 0;
+    }
+
+    div.latest_news p {
+        font-size: 13px;
+        padding: 0px 0 28px 0;
+    }
+
+
+}
+
+/*----------------------------------------------------------------------------------------------------- */
+
+
+
+
+/*最新消息3區塊================================================================================ RWD OK **/
+
+div.block div.block_wrap {
+    /* border: 1px solid rgb(159, 16, 167); */
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+div.block_wrap div.page {
+    /* border: 1px solid rgba(12, 2, 60, 0.925); */
+    text-align: center;
+    margin: 0 15px;
+}
+
+div.block div.img_warp {
+    /* border: 1px solid rgb(208, 31, 15); */
+    width: 350px;
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+}
+
+div.block div.img_warp img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+}
+
+div.block_wrap div.page div.font {
+    /* border: 1px solid rgb(6, 81, 90); */
+    border-bottom: 3px solid #e9c27f;
+    border-top: 3px solid #e9c27f;
+}
+
+div.block_wrap div.page div.font p {
+    /* border: 1px solid rgb(211, 57, 11); */
+    line-height: 1.5;
+    margin: 8px 0;
+}
+
+/* 最新消息3區塊-rwd設定------------------------------------------------------------------------------------- RWD OK --*/
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+    div.block div.block_wrap {
+        display: block;
+        margin: auto;
+        width: 80%;
+    }
+
+    div.block div.img_warp {
+        width: 100%;
+        height: 500px;
+    }
+
+    div.font {
+        /* border: 1px solid rgb(211, 57, 11); */
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.block div.block_wrap {
+        display: block;
+        margin: auto;
+        width: 85%;
+    }
+
+    div.block div.img_warp {
+        width: 100%;
+        height: 400px;
+    }
+
+    div.font {
+        /* border: 1px solid rgb(211, 57, 11); */
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    div.block div.block_wrap {
+        width: 85%;
+        display: block;
+        margin: auto;
+    }
+
+    div.block div.img_warp {
+        width: 100%;
+        height: 400px;
+    }
+
+    div.font {
+        /* border: 1px solid rgb(211, 57, 11); */
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    div.block div.block_wrap {
+        width: 85%;
+        display: block;
+        margin: auto;
+    }
+
+    div.block div.img_warp {
+        width: 100%;
+        height: 300px;
+    }
+
+    div.font {
+        /*border: 1px solid rgb(211, 57, 11); */
+        margin-bottom: 20px;
+    }
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+
+
+/**服務項目--標題 ======================================================================================== RWD OK --*/
+
+div.service_items {
+    /* border: 1px solid red; */
+    text-align: center;
+    margin: auto;
+}
+
+div.service_items h1 {
+    font-size: 50px;
+    font-family: "Cormorant Garamond", serif;
+    color: #e9c27f;
+    letter-spacing: .8rem;
+    padding: 60px 0 12px 0;
+}
+
+div.service_items p {
+    font-size: 13px;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(72, 72, 72);
+    letter-spacing: .4rem;
+    padding: 0px 0 35px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+
+/* 服務內容--標題  -------------------------------------------------------------------------------- RWD OK -------*/
+@media screen and (max-width: 575.98px) {
+    div.service_items h1 {
+        font-size: 35px;
+        padding: 25px 0 12px 0;
+    }
+
+    div.service_items p {
+        font-size: 13px;
+        padding: 0px 0 28px 0;
+    }
+
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+
+/*=============================================================================================================================== RWD OK --*/
+
+
+
+
+/*服務內容區塊 ======================================================================================= RWD OK --*/
+/*01 04 03 04*/
+
+div.service:nth-child(n+3) div.items {
+    order: 1;
+    border-radius: 20px 0 0 20px;
+}
+
+/*偽元素權重比下方覆蓋元素大*/
+div.service {
+    /* border: 2px solid rgb(53, 83, 218); */
+    display: flex;
+    width: 100%;
+}
+
+div.service div.items {
+    border-radius: 0 20px 20px 0;
+    width: 50%;
+    overflow: hidden;
+    outline: 3px solid #e9c27f;
+}
+
+div.service div.items img {
+    /* border: 1px solid rgb(8, 68, 5); */
+    width: 100%;
+    vertical-align: bottom;
+    object-fit: cover;
+    min-height: 100%;
+}
+
+div.font_one {
+    /* border: 1px solid rgb(220, 0, 0); */
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+div.font_wrap {
+    /* border: 1px solid rgb(239, 7, 189); */
+    max-width: 400px;
+    margin: auto;
+}
+
+div.font_wrap h2.title {
+    font-family: "Montserrat", sans-serif;
+    /* border: 1px solid rgb(3, 0, 157); */
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #5a5a5a;
+    letter-spacing: .6rem;
+}
+
+div.font_wrap h2.title::before {
+    content: '';
+    height: 30px;
+    width: 4px;
+    display: inline-block;
+    background-color: #e9c27f;
+    margin-right: 5%;
+}
+
+div.font_wrap p.text {
+    /* border: 1px solid rgb(3, 0, 157); */
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: .4rem;
+    text-align: justify
+}
+
+div.font_wrap p.link {
+    /* border: 1px solid rgb(3, 0, 157); */
+    font-family: "Montserrat", sans-serif;
+    margin-top: 20px;
+    letter-spacing: .4rem;
+    display: flex;
+    align-items: center;
+}
+
+p.link a {
+    text-decoration: none;
+    color: #5a5a5a;
+}
+
+p.link a:hover {
+    color: #e9c27f;
+}
+
+div.font_one p.link::before {
+    content: '';
+    height: 3px;
+    width: 25px;
+    display: block;
+    background-color: #e9c27f;
+    margin-right: 5%;
+    border-radius: 50px;
+}
+
+/*箭頭icon*/
+div.service_lead {
+    /* border: 1px solid rgb(236, 88, 3); */
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+div.service_lead img {
+    max-width: 30px;
+    padding: 20px 0;
+    vertical-align: bottom;
+}
+
+div.service_lead img {
+    max-width: 30px;
+    padding: 20px 0;
+    vertical-align: bottom;
+    animation-name: down;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+
+@keyframes down {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+
+/*服務內容區塊-rwd ================================================================================== RWD OK **/
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.service_block div.service:nth-child(n+3) div.items {
+        border-radius: 20px;
+    }
+
+    div.service_block {
+        width: 100%;
+    }
+
+    div.service_block div.service:nth-child(n+3) div.items {
+        order: 0;
+    }
+
+    div.service {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    div.service div.items {
+        border-radius: 20px;
+        width: 90%;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    div.font_one {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    div.font_one div.font_wrap {
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    div.font_one div.font_wrap h2 {
+        margin-top: 4%;
+    }
+
+    div.font_wrap p.text {
+        font-size: 25px;
+        text-align: center;
+
+    }
+
+    div.font_one h2.title::after {
+        content: '';
+        height: 30px;
+        width: 4px;
+        display: inline-block;
+        background-color: #e9c27f;
+        margin-left: 3%;
+    }
+
+    div.font_wrap h2.title::before {
+        content: '';
+        height: 30px;
+        width: 4px;
+        display: inline-block;
+        background-color: #e9c27f;
+        margin-right: 5%;
+    }
+
+    div.font_one p.link {
+        margin-top: 2%;
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    div.font_one p.link::before {
+        content: '';
+        height: 3px;
+        width: 25px;
+        display: block;
+        background-color: #e9c27f;
+        margin-right: 7%;
+    }
+
+    div.font_one p.link::after {
+        content: '';
+        height: 3px;
+        width: 25px;
+        display: block;
+        background-color: #e9c27f;
+        margin-left: 7%;
+    }
+
+    div.service_lead img {
+        /* border: 1px solid rgb(236, 88, 3); */
+        content: url("../img/bottom03.svg");
+        animation-name: down;
+        position: relative;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+    }
+
+    @keyframes down {
+        0% {
+            bottom: 20;
+            opacity: 1;
+        }
+
+        100% {
+            bottom: 0px;
+            opacity: 0.1;
+        }
+    }
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    div.service_block div.service:nth-child(n+3) div.items {
+        border-radius: 20px;
+    }
+
+    div.service_block {
+        width: 100%;
+    }
+
+    div.service_block div.service:nth-child(n+3) div.items {
+        order: 0;
+    }
+
+    div.service {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    div.service div.items {
+        border: 1px solid #e9c27f;
+        border-radius: 20px 20px 20px 20px;
+        width: 90%;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    div.font_one {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    div.font_one p.text {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    div.font_one div.font_wrap {
+        text-align: center;
+    }
+
+    div.font_one div.font_wrap_left h2 {
+        margin-top: 3%;
+    }
+
+    div.font_wrap h2.title {
+        margin-bottom: 15px;
+    }
+
+    div.font_one h2.title::after {
+        content: '';
+        height: 30px;
+        width: 3px;
+        display: inline-block;
+        background-color: #e9c27f;
+        margin-left: 2%;
+        border-radius: 50px;
+    }
+
+    div.font_wrap h2.title::before {
+        content: '';
+        height: 30px;
+        width: 3px;
+        display: inline-block;
+        background-color: #e9c27f;
+        margin-right: 5%;
+    }
+
+    div.font_one p.link {
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    div.font_one p.link::before {
+        content: '';
+        height: 3px;
+        width: 25px;
+        display: block;
+        margin-right: 10%;
+    }
+
+    div.font_one p.link::after {
+        content: '';
+        height: 3px;
+        width: 25px;
+        display: block;
+        background-color: #e9c27f;
+        margin-left: 6%;
+    }
+
+    /*箭頭icon*/
+    div.service_lead img {
+        /* border: 1px solid rgb(236, 88, 3); */
+        content: url("../img/bottom03.svg");
+        animation-name: down;
+        position: relative;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+    }
+
+    @keyframes down {
+        0% {
+            bottom: 20;
+            opacity: 1;
+        }
+
+        100% {
+            bottom: 0px;
+            opacity: 0.1;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 575.98px) {
+    div.service_block div.service:nth-child(n+3) div.items {
+        border-radius: 20px;
+    }
+
+    div.service_block {
+        width: 100%;
+    }
+
+    div.service_block div.service:nth-child(n+3) div.items {
+        order: 0;
+    }
+
+    div.service {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    div.service div.items {
+        border: 1px solid #e9c27f;
+        border-radius: 20px 20px 20px 20px;
+        width: 90%;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    div.font_one {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    div.font_one p.text {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    div.font_one div.font_wrap {
+        text-align: center;
+    }
+
+    div.font_one div.font_wrap_left h2 {
+        margin-top: 3%;
+    }
+
+    div.font_wrap h2.title {
+        margin-bottom: 15px;
+        font-size: 28px;
+    }
+
+    div.font_one h2.title::after {
+        content: '';
+        height: 28px;
+        width: 3px;
+        display: inline-block;
+        background-color: #e9c27f;
+        margin-left: 2%;
+    }
+
+    div.font_wrap h2.title::before {
+        content: '';
+        height: 28px;
+        width: 3px;
+        display: inline-block;
+        background-color: #e9c27f;
+        margin-right: 5%;
+    }
+
+    div.font_one p.link {
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    div.font_one p.link::after {
+        content: '';
+        height: 3px;
+        width: 25px;
+        display: block;
+        background-color: #e9c27f;
+        margin-left: 6%;
+    }
+
+    div.font_one p.link::before {
+        content: '';
+        height: 3px;
+        width: 25px;
+        display: block;
+        background-color: #e9c27f;
+        margin-right: 5%;
+    }
+
+    /*箭頭icon*/
+    div.service_lead img {
+        /* border: 1px solid rgb(236, 88, 3); */
+        content: url("../img/bottom03.svg");
+        /*更換圖片*/
+        animation-name: down;
+        position: relative;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+    }
+
+    @keyframes down {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.1;
+        }
+    }
+
+}
+
+/*================================================================================================
+
+
+
+
+/*預約我們-標題================================================================================== RWD OK **/
+
+div.reserve_items {
+    /* border: 1px solid red; */
+    text-align: center;
+    background-color: rgb(134, 88, 67);
+}
+
+div.reserve_title h1 {
+    font-size: 44px;
+    font-family: "Cormorant Garamond", serif;
+    color: #e9c27f;
+    padding: 45px 0 12px 0;
+    letter-spacing: .8rem;
+}
+
+div.reserve_title p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    padding: 0px 0 45px 0;
+    letter-spacing: .4rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+div.reserve_items p {
+    color: rgb(255, 255, 255);
+}
+
+/* 預約我們-標題----------------------------------------------------------------------------------------- RWD OK **/
+
+@media screen and (max-width: 575.98px) {
+    div.reserve_title h1 {
+        font-size: 35px;
+        padding: 30px 0 12px 0;
+    }
+
+    div.reserve_title p {
+        padding: 0px 0 30px 0;
+        font-size: 12px;
+    }
+
+}
+
+/*================================================================================================
+
+
+
+
+
+
+/*預約我們-服務區======================================================================================== RWD OK**/
+
+div.reserve_watch {
+    /* border: 1px solid rgb(1, 142, 127); */
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+div.reserve_watch div.reserve_wrap p {
+    margin-top: 36px;
+    font-size: 28px;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: .4rem;
+}
+
+div.reserve_circle {
+    /* border: 1px solid rgb(1, 20, 41); */
+    background-color: aliceblue;
+    width: 180px;
+    border-radius: 200px;
+    margin: auto;
+    outline: 2px solid #e9c27f;
+    outline-offset: 8px;
+    overflow: hidden;
+}
+
+div.reserve_circle:hover {
+    outline: 2px solid #e9c27f;
+    outline-offset: 0px;
+}
+
+div.reserve_circle img.connect {
+    position: relative;
+    top: 10px;
+}
+
+div.reserve_watch img.direction {
+    /* border: 1px solid rgb(255, 0, 0); */
+    width: 30px;
+    margin: 90px 50px 0 50px;
+    align-self: baseline;
+}
+
+/*預約我們-服務區------------------------------------------------------------------------------------------ RWD OK**/
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    div.reserve_watch {
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    div.reserve_items {
+        width: 100%;
+        /* border: 1px solid red; */
+        text-align: center;
+        background-color: rgb(134, 88, 67);
+    }
+
+    div.reserve_items h1 {
+        font-size: 44px;
+        font-family: "Cormorant Garamond", serif;
+        color: #e9c27f;
+        padding: 32px 0 12px 0;
+        letter-spacing: .8rem;
+    }
+
+    div.reserve_title p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        padding: 0px 0 44px 0;
+        letter-spacing: .4rem;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+    }
+
+    div.reserve_watch {
+        /* border: 1px solid rgb(1, 142, 127); */
+        box-sizing: border-box;
+        display: flex;
+        max-width: 1200px;
+        width: 80%;
+        margin: auto;
+        justify-content: center;
+    }
+
+    div.reserve_watch div.reserve_wrap p {
+        margin-top: 30px;
+        margin-bottom: 0px;
+        font-size: 20px;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: .4rem;
+    }
+
+    div.reserve_circle {
+        /* border: 1px solid rgb(1, 20, 41); */
+        background-color: aliceblue;
+        width: 160px;
+        border-radius: 160px;
+        margin: auto;
+        outline: 2px solid #e9c27f;
+        outline-offset: 4px;
+        overflow: hidden;
+    }
+
+    div.reserve_circle:hover {
+        outline: 2px solid #e9c27f;
+        outline-offset: 0px;
+    }
+
+    div.reserve_watch img.direction {
+        /* border: 1px solid rgb(255, 0, 0); */
+        width: 20px;
+        margin: 100px 40px 0 40px;
+        align-self: baseline;
+
+    }
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+
+    div.reserve_items {
+        /* border: 1px solid red; */
+        text-align: center;
+        width: 100%;
+        background-color: rgb(134, 88, 67);
+    }
+
+    div.reserve_items h1 {
+        font-size: 44px;
+        font-family: "Cormorant Garamond", serif;
+        color: #e9c27f;
+        padding: 32px 0 12px 0;
+        letter-spacing: .8rem;
+    }
+
+    div.reserve_title p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 13px;
+        padding: 0px 0 44px 0;
+        letter-spacing: .4rem;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+    }
+
+    div.reserve_watch {
+        /* border: 1px solid rgb(1, 142, 127); */
+        box-sizing: border-box;
+        display: flex;
+        max-width: 1200px;
+        width: 100%;
+        margin: auto;
+        justify-content: center;
+    }
+
+    div.reserve_watch div.reserve_wrap p {
+        margin-top: 30px;
+        margin-bottom: 0px;
+        font-size: 20px;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: .4rem;
+    }
+
+    div.reserve_circle {
+        /* border: 1px solid rgb(1, 20, 41); */
+        background-color: aliceblue;
+        width: 90px;
+        border-radius: 200px;
+        margin: auto;
+        outline: 2px solid #e9c27f;
+        outline-offset: 4px;
+        overflow: hidden;
+    }
+
+    div.reserve_circle:hover {
+        outline: 2px solid #e9c27f;
+        outline-offset: 0px;
+    }
+
+    div.reserve_watch img.direction {
+        /* border: 1px solid rgb(255, 0, 0); */
+        width: 20px;
+        margin: 45px 30px 0 30px;
+        align-self: baseline;
+
+    }
+
+}
+
+@media screen and (max-width: 575.98px) {
+
+    div.reserve_watch {
+        /* border: 1px solid rgb(1, 142, 127); */
+        margin: auto;
+    }
+
+    div.reserve_watch div.reserve_wrap p {
+        /* border: 1px solid rgb(1, 142, 127); */
+        margin-top: 20px;
+        font-size: 20px;
+        letter-spacing: .6rem;
+    }
+
+    div.reserve_circle {
+        /* border: 1px solid rgb(255, 118, 20); */
+        width: 100px;
+        outline-offset: 4px;
+    }
+
+    div.reserve_watch img.direction.one {
+        margin: 40px 30px 0 30px;
+        width: 25px;
+    }
+
+    div.reserve_watch img.direction.two {
+        /*指示icon*/
+        display: none;
+    }
+
+    div.two {
+        display: none;
+    }
+
+}
+
+/*================================================================================================
+
+/*置頂按鈕 ===================================================================================================== RWD OK**/
+
+/* 定义一个样式类来添加置顶图标 */
+.sticky-icon img {
+    position: fixed;
+    bottom: 50px;
+    right: 75px;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 200;
+    border: 3px solid #e9c27f;
+}
+
+
+/*版權聲明===================================================================================================== RWD OK**/
+
+div.earning_statement {
+    /* border: 1px solid rgb(255, 0, 0); */
+    background-color: #624a3a;
+    width: 100%;
+}
+
+div.earning_statement_wrap {
+    /* border: 2px solid rgb(53, 83, 218); */
+    padding: 10px;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+div.earning_statement p {
+    word-break: normal;
+    color: rgb(255, 255, 255);
+    line-height: 25px;
+}

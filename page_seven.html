@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倆倆拾光</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link rel="stylesheet" href="./CSS/seven.css">
+
+    <!---字體鏈結----------------------------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow&family=Dancing+Script&family=Kanit:ital,wght@1,100&family=Lato:ital@0;1&family=Raleway&family=Roboto:wght@100&family=Yellowtail&display=swap"
+        rel="stylesheet">
+    <!---字體鏈結----------------------------------------------------->
+
+
+</head>
+
+<body>
+
+    <!--側邊倆線條 -------------------------------------------------->
+
+    <div class="body_left_line"></div>
+    <div class="body_reigt_line"></div>
+
+    <!--------------------------------------------------------------->
+
+    <!--導覽列區塊 ------------------------------------------------------------------------>
+
+    <!--漢堡選單按鈕-->
+
+    <input type="checkbox" name="" id="menu-control" />
+
+    <div class="header">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="./img/logo-01.svg" alt="logo" />
+            </a>
+        </div>
+
+        <!--漢堡選單 點選 label 標籤觸發上面的 checkbox -->
+        <label for="menu-control" class="menu-btn">
+            <span>選單</span>
+        </label>
+
+        <nav class="navbar">
+            <a href="page_two.html">團隊介紹</a>
+            <a href="page_three.html">攝影作品</a>
+            <a href="page_four.html">攝影方案</a>
+            <a href="page_five.html">婚禮專欄</a>
+            <a href="page_six.html">好評推薦</a>
+            <a href="page_seven.html">線上預約</a>
+            <a href="page_eight.html">
+                <img class="search" src="./img/user.svg">
+            </a>
+        </nav>
+    </div>
+
+    <!--banner區塊--------------------------------------------------->
+
+    <div class="BN_Column">
+
+        <div class="BN_Column_font">
+            <p>向我們預約幸福吧
+                <br>讓你們的故事邁向美好
+            </p>
+        </div>
+
+        <div class="BN_Column_black"></div>
+        <img class="BN_Column_img" src="./img/07-01.jpg" alt="">
+
+    </div>
+
+    <!--新人好評區塊-標題 --------------------------------------------->
+
+    <div class="team_items two">
+
+        <h1>預約諮詢</h1>
+        <p>Consultation</p>
+
+    </div>
+
+    <!--表單預約----------------------------------------------------->
+
+    <div class="container">
+
+        <div class="from_img">
+
+            <img src="../mywed/img/08.jpg" alt="">
+
+            <div class="connection">
+                <div class="connection_text">
+                    <h1 class="title">聯絡我們</h1>
+                    <h2 class="title2">connection</h2>
+                    <span class="text2">Phone：0932-161-379(Luke)</span>
+                    <span class="text3">Email：bboyluke520i@gmail.com</span>
+                    <span class="text4">Line ID：bboyluke</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="base">
+
+            <div class="base_one">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="base_two">
+                <label for="email">電子郵件：</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="base_three">
+                <label for="phone">聯絡電話：</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="base_three">
+                <label for="serve">服務項目：</label>
+                <select id="serve" name="serve">
+                    <option value="serve" selected>請選擇你想要的預約服務</option>
+                    <option value="Wedding photography">婚紗攝影</option>
+                    <option value="couple">情侶寫真</option>
+                    <option value="overseas">海外婚紗</option>
+                    <option value="pregnant">孕婦寫真</option>
+                    <option value="family">家庭寫真</option>
+                </select>
+                <!-- 
+                <input type="serve" id="serve" name="serve" required> -->
+            </div>
+
+            <label for="date">預約日期：</label>
+            <input type="date" id="date" name="date" required>
+
+
+            <div class="reserve">
+
+                <div class="noon">
+                    <h2>下午時段 :</h2>
+                    <button type="button" class="reserve-btn">10:00</button>
+                    <button type="button" class="reserve-btn">12:00</button>
+                    <button type="button" class="reserve-btn">14:00</button>
+                    <button type="button" class="reserve-btn">16:00</button>
+                </div>
+
+                <div class="night">
+                    <h2>晚上時段 :</h2>
+                    <button type="button" class="reserve-btn">18:00</button>
+                    <button type="button" class="reserve-btn">20:00</button>
+                    <button type="button" class="reserve-btn">22:00</button>
+                </div>
+
+            </div>
+
+            <label class="message" for="message">
+                <p>備註：</p>
+            </label>
+
+            <textarea rows="15" cols="45" placeholder="備註或其他需求" id="message" name="message"></textarea>
+
+
+            <input class="button" type="submit" value="提交預約">
+
+        </div>
+
+    </div>
+
+
+    <!--地圖----------------------------------------------------->
+
+    <div class="location-info">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.423363045205!2d121.5040013751083!3d24.98572634023423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468026e38645367%3A0xa380c9dfd2642b7d!2zMjM15paw5YyX5biC5Lit5ZKM5Y2A6IiI5Y2X6Lev5LqM5q61MzTlt7cxM-iZnw!5e0!3m2!1szh-TW!2stw!4v1695218201251!5m2!1szh-TW!2stw"
+            width="800" height="460" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+
+    <!--置頂按鈕 ------------------------------------------------------------------>
+
+    <div class="sticky-icon">
+        <img src="../mywed/img/Vector.svg" alt="">
+    </div>
+
+    <!--footer 區塊 ------------------------------------------------------------------>
+
+    <footer>
+
+        <div class="footer_wrap">
+
+            <img class="footer_logo" src="./img/logo-01.svg">
+
+            <div class="footer_font0ne">
+                <h6>CONTACT US</h6>
+                <p>電話｜09-58586468</p>
+                <p>信箱｜s86682356@tibame.com</p>
+                <p>地址｜新北市永和區中和路三段64巷</p>
+            </div>
+
+            <div class="footer_fonttwo">
+                <h6>CONTACT US</h6>
+                <div class="ul_iteam">
+                    <ul class="ul_one">
+                        <li><a href="page_two.html" target="_blank">團隊介紹</a></li>
+                        <li><a href="page_three.html" target="_blank">攝影作品</a></li>
+                        <li><a href="page_four.html" target="_blank">攝影方案</a></li>
+                    </ul>
+                    <ul class="ul_two">
+                        <li><a href="page_seven.html" target="_blank">線上預約</a></li>
+                        <li><a href="page_six.html" target="_blank">好評推薦</a></li>
+                        <li><a href="page_five.html" target="_blank">婚禮專欄</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer_icon">
+
+                <div class="footer_img">
+                    <img src="./img/ig_w.svg" alt="">
+                    <img src="./img/face_w.svg" alt="">
+                    <img src="./img/youtobe_w.svg" alt="">
+                </div>
+
+                <div class="footer_icon_font">
+                    <p>服務聲明</p>
+                    <p>隱私權聲明</p>
+                    <p>聯絡我們</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="copy_right">
+            <p>© KNIGHT CLUB HELMET CO. ALL RIGHTS RESERVED</p>
+        </div>
+
+
+    </footer>
+
+    <!--版權聲明區塊------------------------------------------------------------------>
+
+    <div class="earning_statement">
+        <div class="earning_statement_wrap">
+            <p>本網站為緯育TibaMe前端工程師專業技術養成班THD103學員專題作品，本平台僅供學習、展示之用。若有侵權疑慮，
+                您可以私訊 [緯育TibaMe] ，後續會由專人協助處理。。參考資源 : 焱木攝影工作室 JOJO婚紗攝影 。</p>
+        </div>
+    </div>
+
+    <script src="./JS/seven.js"></script>
+
+</body>
+
+</html>
